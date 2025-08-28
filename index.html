@@ -132,6 +132,183 @@
                 max-width: 300px;
             }
         }
+
+        .program-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-Program-title {
+            text-align: center;
+            font-size: 5em;
+            color: #f8f8f8;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .day-content {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .session-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .session-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #1976d2, #42a5f5);
+            border-radius: 2px;
+        }
+
+        .session-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .session-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .session-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #1976d2;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #1976d2;
+        }
+
+        .session-header {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px 25px;
+            border-bottom: 2px solid #1976d2;
+        }
+
+        .session-time {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .session-time::before {
+            content: '🕐';
+            font-size: 1.2em;
+        }
+
+        .session-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .session-type {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #1976d2;
+            color: white;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .session-content {
+            padding: 20px 25px;
+        }
+
+        .session-description {
+            color: #546e7a;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .session-speakers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .speaker-info {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border-left: 4px solid #1976d2;
+            font-size: 0.9em;
+        }
+
+        .speaker-name {
+            font-weight: bold;
+            color: #1565c0;
+        }
+
+        .speaker-title {
+            color: #666;
+            font-size: 0.85em;
+        }
+
+        .session-location {
+            background: #fff3e0;
+            color: #de1515;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .session-location::before {
+            content: '📍';
+        }
+
+        .break-item {
+            background: linear-gradient(135deg, #fff3e0, #ffcc02);
+            border-left: 5px solid #ff9800;
+        }
+
+        .break-item .session-title {
+            color: #ef6c00;
+        }
+
+        @media (max-width: 768px) {
+            .session-timeline {
+                padding-left: 20px;
+            }
+            
+            .session-speakers {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
     </style>
 
     <!-- ======== CSS here ======== -->
@@ -465,32 +642,164 @@
     </div>
     <!-- ======== speakers-section end ======== -->
 
-    <!-- ======== subscribe-section start ======== -->
-    <section id="contact" class="subscribe-section pt-120">
+    <!-- ======== Program-section start ======== -->
+    <section id="Program" class="subscribe-section pt-120">
       <div class="container">
         <div class="subscribe-wrapper img-bg">
           <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-7">
-              <div class="section-title mb-15">
-                <h2 class="text-white mb-25">Subscribe Our Newsletter</h2>
-                <p class="text-white pr-5">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor
-                </p>
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-5">
-              <form action="#" class="subscribe-form">
-                <input
-                  type="email"
-                  name="subs-email"
-                  id="subs-email"
-                  placeholder="Your Email"
-                />
-                <button type="submit" class="main-btn btn-hover">
-                  Subscribe
-                </button>
-              </form>
+
+            <div class="program-section">
+              <h2 class="section-Program-title">Event Program</h2>
+        
+                <!-- Single Day Program -->
+                <div class="day-content">
+                    
+                    <div class="session-timeline">
+                        <div class="session-item">
+                            <div class="session-header">
+                                <div class="session-time">09:00 - 09:30</div>
+                                <div class="session-title">Registration & Welcome Coffee</div>
+                                <span class="session-type">Registration</span>
+                                <span class="session-location">Hotel Room</span>
+                            </div>
+                            <div class="session-content">
+                                <div class="session-description">
+                                    Welcome reception with coffee, pastries, and networking opportunities. Pick up your conference materials and connect with fellow attendees.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-header">
+                                <div class="session-time">09:30 - 10:00</div>
+                                <div class="session-title">Opening Ceremony</div>
+                                <span class="session-type">Opening</span>
+                                <span class="session-location">Hotel Room</span>
+                            </div>
+                            <div class="session-content">
+                                <div class="session-description">
+                                    Welcome address by conference organizers and introduction to the day's agenda focusing on AI policy, innovation, and social impact.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-header">
+                                <div class="session-time">10:00 - 10:30</div>
+                                <div class="session-title">Keynote: A Global Perspective on AI Policy</div>
+                                <span class="session-type">Keynote</span>
+                                <span class="session-location">Hotel Room</span>
+                            </div>
+                            <div class="session-content">
+                                <div class="session-description">
+                                    An insightful overview of international AI policy frameworks, regulatory approaches, and the need for global coordination in AI governance.
+                                </div>
+                                <div class="session-speakers">
+                                    <div class="speaker-info">
+                                        <div class="speaker-name">Dr. John Smith</div>
+                                        <div class="speaker-title">MIT Technology Institute</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-header">
+                                <div class="session-time">10:30 - 11:30</div>
+                                <div class="session-title">Panel 1: AI Investment for Innovation and Industry Transformation</div>
+                                <span class="session-type">Panel</span>
+                                <span class="session-location">Hotel Room</span>
+                            </div>
+                            <div class="session-content">
+                                <div class="session-description">
+                                    Exploring investment strategies, funding opportunities, and the role of AI in transforming traditional industries and creating new market opportunities.
+                                </div>
+                                <div class="session-speakers">
+                                    <div class="speaker-info">
+                                        <div class="speaker-name">Dr. Sarah Johnson</div>
+                                        <div class="speaker-title">Stanford University</div>
+                                    </div>
+                                    <div class="speaker-info">
+                                        <div class="speaker-name">Prof. Michael Chen</div>
+                                        <div class="speaker-title">Harvard Business School</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-header">
+                                <div class="session-time">11:30 - 12:30</div>
+                                <div class="session-title">Panel 2: Ethics, Governance, and Regulation in AI Development</div>
+                                <span class="session-type">Panel</span>
+                                <span class="session-location">Hotel Room</span>
+                            </div>
+                            <div class="session-content">
+                                <div class="session-description">
+                                    Addressing critical ethical considerations, governance frameworks, and regulatory challenges in AI development and deployment across different sectors.
+                                </div>
+                                <div class="session-speakers">
+                                    <div class="speaker-info">
+                                        <div class="speaker-name">Dr. Emily Rodriguez</div>
+                                        <div class="speaker-title">Google Research</div>
+                                    </div>
+                                    <div class="speaker-info">
+                                        <div class="speaker-name">Dr. David Kim</div>
+                                        <div class="speaker-title">Microsoft Research Lab</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-header">
+                                <div class="session-time">12:30 - 13:30</div>
+                                <div class="session-title">Panel 3: AI for Social Good and Inclusive Job Creation</div>
+                                <span class="session-type">Panel</span>
+                                <span class="session-location">Hotel Room</span>
+                            </div>
+                            <div class="session-content">
+                                <div class="session-description">
+                                    Discussing how AI can be leveraged to address social challenges, promote inclusivity, and create sustainable employment opportunities in the evolving digital economy.
+                                </div>
+                                <div class="session-speakers">
+                                    <div class="speaker-info">
+                                        <div class="speaker-name">Prof. Lisa Thompson</div>
+                                        <div class="speaker-title">Carnegie Mellon University</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <div class="session-header">
+                                <div class="session-time">13:30 - 14:00</div>
+                                <div class="session-title">Closing Ceremony</div>
+                                <span class="session-type">Closing</span>
+                                <span class="session-location">Hotel Room</span>
+                            </div>
+                            <div class="session-content">
+                                <div class="session-description">
+                                    Closing remarks, key takeaways from the day's discussions, and acknowledgments. Final thoughts on the future of AI policy and innovation.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="session-item break-item">
+                            <div class="session-header">
+                                <div class="session-time">14:00 - 15:00</div>
+                                <div class="session-title">Lunch & Networking</div>
+                                <span class="session-type">Networking</span>
+                                <span class="session-location">Hotel Room</span>
+                            </div>
+                            <div class="session-content">
+                                <div class="session-description">
+                                    Concluding lunch with continued networking opportunities. Connect with speakers, panelists, and fellow attendees to discuss insights from the conference.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>

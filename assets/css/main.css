@@ -644,13 +644,13 @@ p {
 .sticky .navbar .navbar-nav .nav-item .nav-btn {
   color: #fff;
   border-color: #fff;
-  background-color: #007bff;
+  background-color: #323266;
 }
 
 .sticky .navbar .navbar-nav .nav-item .nav-btn:hover {
-  background-color: #007bff; /* Blue background on hover when sticky */
+  background-color: #323266; 
   color: #fff;
-  border-color: #007bff;
+  border-color: #323266;
 }
 
 .sticky .navbar .navbar-nav .nav-item .nav-btn::before {
@@ -837,7 +837,7 @@ p {
 }
 
 .hero-section .hero-content {
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
@@ -993,7 +993,7 @@ p {
   height: 130px;
   border-radius: 50%;
   background: rgba(88, 100, 255, 0.1);
-  color: #5864FF;
+  color: #323266;
   margin: auto;
   margin-bottom: 30px;
   font-size: 65px;
@@ -1303,7 +1303,7 @@ p {
   font-size: 65px;
   line-height: 1;
   margin-bottom: 30px;
-  color: #5864FF;
+  color: #323266;
 }
 
 .feature-extended-section .single-feature-extended .content h3 {
@@ -1314,6 +1314,170 @@ p {
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
+}
+
+/* ======= Speakers css ======== */
+.speakers-section {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #f5f7fa;
+}
+
+.speakers-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 50px;
+    padding: 0 50px;
+    transition: transform 0.5s ease;
+    width: max-content;
+}
+
+.speakers-section-title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5em;
+    color: #2c3e50;
+    font-weight: bold;
+    z-index: 10;
+    margin: 0;
+    text-align: center;
+}
+
+.speakers-row {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.3s ease;
+    padding: 80px 50px 50px 50px;
+}
+
+.speaker-card {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.speaker-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+}
+
+.speaker-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #1976d2;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+
+.speaker-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.speaker-card:hover .speaker-image img {
+    transform: scale(1.1);
+}
+
+.speaker-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1565c0;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.speaker-name::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: #1976d2;
+    border-radius: 2px;
+}
+
+.speaker-affiliation {
+    font-size: 1em;
+    color: #37474f;
+    line-height: 1.4;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #1976d2;
+  font-size: 0.9em;
+  text-align: center;
+  z-index: 10;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: rgba(25, 118, 210, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #1976d2;
+  transition: width 0.5s ease;
+  width: 16.66%; /* 1/6 for first speaker */
+}
+
+@media (max-width: 768px) {
+  .speakers-container {
+      padding: 0 20px;
+      gap: 30px;
+  }
+  
+  .speaker-card {
+      width: 280px;
+  }
+
+  .section-title {
+      font-size: 2em;
+      padding: 0 20px;
+  }
 }
 
 /* ======= subscribe css ======= */

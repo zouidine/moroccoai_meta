@@ -13,304 +13,6 @@
     /-->
     <!-- Place favicon.ico in the root directory -->
 
-    <!-- For Speakers-->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            background-color: #f5f7fa;
-        }
-
-        .speakers-section {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3em;
-            color: #2c3e50;
-            margin-top: 100px;
-            margin-bottom: 50px;
-            font-weight: bold;
-        }
-
-        .speakers-row {
-            display: flex;
-            justify-content: center;
-            gap: 150px;
-            margin-bottom: 100px;
-            flex-wrap: wrap;
-        }
-
-        .speaker-card {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 280px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .speaker-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .speaker-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #1976d2, #42a5f5);
-        }
-
-        .speaker-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            position: relative;
-            overflow: hidden;
-            border: 4px solid #1976d2;
-            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
-        }
-
-        .speaker-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .speaker-card:hover .speaker-image img {
-            transform: scale(1.1);
-        }
-
-        .speaker-name {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #1565c0;
-            margin-bottom: 8px;
-            position: relative;
-        }
-
-        .speaker-name::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 3px;
-            background: #1976d2;
-            border-radius: 2px;
-        }
-
-        .speaker-affiliation {
-            font-size: 1em;
-            color: #37474f;
-            line-height: 1.4;
-            margin-top: 15px;
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-            .speakers-row {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-            
-            .speaker-card {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        .program-section {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-Program-title {
-            text-align: center;
-            font-size: 4em;
-            color: #f8f8f8;
-            margin-bottom: 40px;
-            font-weight: bold;
-        }
-
-        .day-content {
-            display: block;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .session-timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .session-timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #ff0000, #f5424278);
-            border-radius: 2px;
-        }
-
-        .session-item {
-            background: white;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .session-item:hover {
-            transform: translateX(15px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .session-item::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 25px;
-            width: 12px;
-            height: 12px;
-            background: #1976d2;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #1976d2;
-        }
-
-        .session-header {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            padding: 20px 25px;
-            border-bottom: 2px solid #1976d2;
-        }
-
-        .session-time {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #1565c0;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .session-time::before {
-            content: '🕐';
-            font-size: 1.2em;
-        }
-
-        .session-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-
-        .session-type {
-            display: inline-block;
-            padding: 4px 12px;
-            background: #1976d2;
-            color: white;
-            border-radius: 15px;
-            font-size: 0.8em;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .session-content {
-            padding: 20px 25px;
-        }
-
-        .session-description {
-            color: #546e7a;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .session-speakers {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .speaker-info {
-            background: #f8f9fa;
-            padding: 8px 15px;
-            border-radius: 20px;
-            border-left: 4px solid #1976d2;
-            font-size: 0.9em;
-        }
-
-        .speaker-name {
-            font-weight: bold;
-            color: #1565c0;
-        }
-
-        .speaker-title {
-            color: #666;
-            font-size: 0.85em;
-        }
-
-        .session-location {
-            background: #fff3e0;
-            color: #de1515;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .session-location::before {
-            content: '📍';
-        }
-
-        .break-item {
-            background: linear-gradient(135deg, #fff3e0, #ffcc02);
-            border-left: 5px solid #ff9800;
-        }
-
-        .break-item .session-title {
-            color: #ef6c00;
-        }
-
-        @media (max-width: 768px) {
-            .session-timeline {
-                padding-left: 20px;
-            }
-            
-            .session-speakers {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
-    </style>
-
     <!-- ======== CSS here ======== -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/lineicons.css" />
@@ -345,27 +47,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
-                </a>
-                
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="toggler-icon"></span>
-                  <span class="toggler-icon"></span>
-                  <span class="toggler-icon"></span>
-                </button>
-
-                <div
-                  class="collapse navbar-collapse sub-menu-bar"
-                  id="navbarSupportedContent"
-                >
+                <div class="collapse navbar-collapse sub-menu-bar">
                   <ul id="nav" class="navbar-nav ms-auto">
                     <li class="nav-item">
                       <a class="page-scroll active" href="#about">About</a>
@@ -383,7 +65,7 @@
                       <a class="page-scroll" href="#Venue">Venue</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-btn" href="javascript:void(0)">  Register Now  </a>
+                      <a class="nav-btn" href="javascript:void(0)">Register Now</a>
                     </li>
                   </ul>
                 </div>
@@ -433,16 +115,8 @@
           <div class="col-xl-6 col-lg-6">
             <div class="about-img">
               <img src="assets/img/about/about-1.png" alt="" class="w-100" />
-              <img
-                src="assets/img/about/about-left-shape.svg"
-                alt=""
-                class="shape shape-1"
-              />
-              <img
-                src="assets/img/about/left-dots.svg"
-                alt=""
-                class="shape shape-2"
-              />
+              <img src="assets/img/about/about-left-shape.svg" alt="" class="shape shape-1"/>
+              <img src="assets/img/about/left-dots.svg" alt="" class="shape shape-2"/>
             </div>
           </div>
           <div class="col-xl-6 col-lg-6">
@@ -467,12 +141,12 @@
       <div class="feature-extended-wrapper">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-xxl-5 col-xl-6 col-lg-8 col-md-9">
-              <div class="section-title text-center mt-10 mb-10">
-                <h5 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
+            <div class="">
+              <div class="section-title text-center mt-50 mb-10">
+                <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
                   This workshop represents a pivotal opportunity to influence the trajectory of AI governance in 
                   emerging markets while establishing Morocco as a regional leader in thoughtful AI policy development.
-                </h5>
+                </h3>
               </div>
             </div>
           </div>
@@ -527,7 +201,7 @@
     <!-- ======== feature-section end ======== -->
 
     <!-- ======== Panels-section start ======== -->
-    <section class="feature-section pt-120">
+    <section class="feature-section pt-100">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-4 col-md-8 col-sm-10">
@@ -577,7 +251,7 @@
 
     <!-- ======== Speakers-section start ======== -->
     <div id="Speakers" class="speakers-section">
-        <h2 class="section-title">Speakers</h2>
+        <h1 class="speakers-section-title">Speakers</h1>
         
         <!-- First Row -->
         <div class="speakers-row">
@@ -607,6 +281,33 @@
         </div>
         
         <!-- Second Row -->
+        <div class="speakers-row">
+            <div class="speaker-card">
+                <div class="speaker-image">
+                    <img src="assets/img/speakers/speaker.png">
+                </div>
+                <div class="speaker-name">Dr. Full Name</div>
+                <div class="speaker-affiliation">Poste<br>Affiliation</div>
+            </div>
+            
+            <div class="speaker-card">
+                <div class="speaker-image">
+                    <img src="assets/img/speakers/speaker.png">
+                </div>
+                <div class="speaker-name">Dr. Full Name</div>
+                <div class="speaker-affiliation">Poste<br>Affiliation</div>
+            </div>
+            
+            <div class="speaker-card">
+                <div class="speaker-image">
+                    <img src="assets/img/speakers/speaker.png">
+                </div>
+                <div class="speaker-name">Prof. Full Name</div>
+                <div class="speaker-affiliation">Poste<br>Affiliation</div>
+            </div>
+        </div>
+        
+        <!-- Third Row -->
         <div class="speakers-row">
             <div class="speaker-card">
                 <div class="speaker-image">
@@ -799,6 +500,85 @@
       </div>
     </section>
     <!-- ======== subscribe-section end ======== -->
+
+    <!-- ======== Organizers-section start ======== -->
+    <section id="Organizers" class="organizers-section pt-120">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center mb-60">
+              <h2 class="wow fadeInUp" data-wow-delay=".2s">Event Organizers</h2>
+              <p class="wow fadeInUp" data-wow-delay=".4s">
+                Brought to you by leading organizations committed to advancing AI policy and innovation
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6">
+            <div class="single-organizer">
+              <div class="organizer-logo">
+                <img src="assets/img/logo/moroccoai-logo.png" alt="MoroccoAI Logo" class="w-100">
+              </div>
+                             <div class="organizer-content">
+                 <p>
+                   A leading non-profit organization dedicated to advancing AI research, education, and implementation across Morocco. Through partnerships with academia, industry, and government, MoroccoAI has established itself as a crucial bridge between global AI advancements and local implementation.
+                 </p>
+               </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-6">
+            <div class="single-organizer">
+              <div class="organizer-logo">
+                <img src="assets/img/logo/meta-logo.png" alt="Meta Logo" class="w-100">
+              </div>
+                             <div class="organizer-content">
+                 <p>
+                   A global technology leader committed to responsible AI development and deployment. Meta's AI governance team works across regions to foster constructive dialogue between industry and policymakers, supporting the creation of regulatory frameworks that protect users while enabling innovation.
+                 </p>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== Organizers-section end ======== -->
+
+    <!-- ======== Venue-section start ======== -->
+    <section id="Venue" class="venue-section pt-120">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center mb-60">
+              <h2 class="wow fadeInUp" data-wow-delay=".2s">Venue</h2>
+              <p class="wow fadeInUp" data-wow-delay=".4s">
+                Location details for the AI Policies workshop
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="venue-content text-center">
+              <div class="venue-status">
+                <h3>Venue: TBD</h3>
+                <p class="venue-description">
+                  The venue for the AI Policies workshop will be announced soon. 
+                  We are currently finalizing the location details to ensure the best experience for all participants.
+                </p>
+                <div class="venue-update">
+                  <span class="update-badge">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======== Venue-section end ======== -->
 
     <!-- ======== footer start ======== -->
     <footer class="footer">

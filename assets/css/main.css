@@ -280,7 +280,7 @@ p {
 .scroll-top {
   width: 45px;
   height: 45px;
-  background: #5864FF;
+  background: #323266;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,7 +306,7 @@ p {
 
 .scroll-top:hover {
   color: #fff;
-  background: rgba(88, 100, 255, 0.8);
+  background: #323266;
 }
 
 @keyframes animation1 {
@@ -611,7 +611,39 @@ p {
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .sticky .navbar {
-    padding: 15px 0;
+    padding: 10px 0;
+  }
+}
+
+/* Text Logo Styles */
+.navbar-brand.text-logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+  -webkit-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.navbar-brand.text-logo:hover {
+  color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+/* Sticky navbar text logo styles */
+.sticky .navbar .navbar-brand.text-logo {
+  color: #323266;
+}
+
+.sticky .navbar .navbar-brand.text-logo:hover {
+  color: #e61d25;
+}
+
+/* Mobile responsive styles for text logo */
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .navbar-brand.text-logo {
+    font-size: 20px;
   }
 }
 
@@ -1260,7 +1292,6 @@ p {
 .speaker-name {
     font-size: 1.4em;
     font-weight: bold;
-    color: #f60303;
     margin-bottom: 8px;
     position: relative;
 }
@@ -1620,7 +1651,7 @@ p {
 
 .organizer-logo {
   margin-bottom: 25px;
-  max-width: 200px;
+  max-width: 430px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1676,12 +1707,13 @@ p {
   color: #5B657E;
   font-size: 18px;
   line-height: 28px;
+  text-align: center;
 }
 
 .venue-content {
   background: white;
-  padding: 60px 40px;
-  border-radius: 20px;
+  padding: 5px 5px;
+  border-radius: 5px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -1692,39 +1724,13 @@ p {
   margin-bottom: 25px;
 }
 
-.venue-description {
-  color: #5B657E;
-  font-size: 18px;
-  line-height: 28px;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.venue-update {
-  margin-top: 30px;
-}
-
-.update-badge {
-  background: linear-gradient(135deg, #1976d2, #42a5f5);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
-}
-
 @media (max-width: 768px) {
   .venue-section .section-title h2 {
     font-size: 36px;
   }
   
   .venue-content {
-    padding: 40px 20px;
+    padding: 5px 5px;
   }
   
   .venue-status h3 {
@@ -1737,8 +1743,8 @@ p {
   background-image: url("../img/footer/footer-bg.svg");
   background-size: cover;
   background-position: top right;
-  padding-top: 260px;
-  margin-top: 100px;
+  padding-top: 300px;
+  margin-top: 10px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1755,7 +1761,7 @@ p {
 }
 
 .footer .widget-wrapper .footer-widget {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -1775,8 +1781,8 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .footer .widget-wrapper .footer-widget .socials li {
@@ -1800,7 +1806,7 @@ p {
   background: #fff;
 }
 
-.footer .widget-wrapper .footer-widget h3 {
+.footer .widget-wrapper .footer-widget h4 {
   margin-bottom: 25px;
   color: #fff;
 }

@@ -92,6 +92,38 @@
     navbarToggler.classList.toggle("active");
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', function() {
+            // Toggle the collapse class
+            navbarCollapse.classList.toggle('show');
+            
+            // Toggle the active class on the hamburger for animation
+            navbarToggler.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on navigation links (mobile)
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-item a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside (mobile)
+        document.addEventListener('click', function(e) {
+            if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                navbarCollapse.classList.remove('show');
+                navbarToggler.classList.remove('active');
+            }
+        });
+    }
+});
+
   // WOW active
   new WOW().init();
 })();

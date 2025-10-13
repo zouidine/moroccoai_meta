@@ -998,6 +998,25 @@ p {
   z-index: -1;
 }
 
+.about-section .about-img .flyer {
+  height: 500px;
+  width: 500px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .about-section .about-img .flyer {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section .about-img .flyer {
+    width: 70%;
+    height: 70%;
+  }
+}
+
 .about-section .about-img .shape.shape-1 {
   top: 50%;
   -webkit-transform: translateY(-50%);

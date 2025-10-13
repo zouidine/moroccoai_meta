@@ -1685,7 +1685,7 @@ p {
 /* Form Container */
     #form {
       max-width: 1100px;
-      margin: 100px auto;
+      margin: 50px auto;
       padding: 30px;
       background: linear-gradient(135deg, #e3f2fd, #bbdefb);
       border-radius: 20px;
@@ -1784,6 +1784,55 @@ p {
       color: #333;
       margin-bottom: 10px;
     }
+
+/*===========================
+    VENUE SECTION css 
+===========================*/
+.venue-section {
+  background: #f8f9fa;
+}
+
+.venue-section .section-title h2 {
+  color: #472416;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.venue-section .section-title p {
+  color: #5B657E;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.venue-content {
+  background: white;
+  padding: 5px 5px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.venue-status h3 {
+  color: #162447;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .venue-section .section-title h2 {
+    font-size: 36px;
+  }
+  
+  .venue-content {
+    padding: 5px 5px;
+  }
+  
+  .venue-status h3 {
+    font-size: 28px;
+  }
+}
 
 /* ======= footer css ======= */
 .footer {
